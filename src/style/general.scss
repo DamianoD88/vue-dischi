@@ -1,0 +1,16 @@
+@import 'bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import "~@fontsource/montserrat/index.css";
+@import "~@fontsource/montserrat/700.css";
+
+body {
+    font-family: "Montserrat";
+}
+
+
