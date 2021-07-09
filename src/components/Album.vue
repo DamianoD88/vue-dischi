@@ -1,8 +1,9 @@
 <template>
   <section>
       <div class="row" v-if="!loading">
-          <div v-for="(music, index) in album" :key="index" class="col-6 col-md-4 col-lg-3">
+          <div v-for="(music, index) in Album" :key="index" class="col-6 col-md-4 col-lg-5">
               {{ music.title  }}
+              <music :details="music" />
               <!-- <music :details="music" /> -->
           </div>
       </div>
@@ -13,6 +14,7 @@
 
 <script>
 import axios from 'axios';
+import music from '@/components/music.vue'
 // import Loader from '@/components/Loader.vue';
 // import Song from '@/components/Song.vue';
 
@@ -20,13 +22,14 @@ import axios from 'axios';
 export default {
     name: 'Album',
     components: {
+        music
         // Song,
         // Loader
     },
     data() {
         return {
             apiURL : 'https://flynn.boolean.careers/exercises/api/array/music',
-            album : '',
+            Album : '',
             loading: true
         }
     },
@@ -37,11 +40,14 @@ export default {
         getAlbum(){
             axios
                 .get(this.apiURL)
-                .then(response => {
-                    console.log(response.data);
-                    this.Album = response.data;
-                    console.log(this.Album);
-                    this.loading = false;
+                .then(res => {
+                    if (res.data.success == true){
+                        console.log(res.data.response);
+                        this.Album = res.data.response;
+                        console.log(this.Album);
+                        this.loading = false;
+                    }
+                    
                 })
                 .catch(error => {
                     console.log('Errore: ', error);
