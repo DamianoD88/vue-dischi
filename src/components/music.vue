@@ -1,10 +1,17 @@
 <template>
-  <div>
-      <img :src="details.poster" :alt="details.title">
-      <div>{{ details.author }}
-          <div> {{ details.year }}</div>
-      </div>
+  <div class="card-group g-4 ">
+
+      <div class="card">
+          <img class="card-img-top p-2" :src="details.poster" :alt="details.title">
+      <h5 class="card-title text-center">
+          {{ details.title }}
+      </h5>
       
+      <div class="card-text text-center">{{ details.author }}
+          <div class="card-text text-center"> {{ details.year }}</div>
+      </div>
+      </div>
+
   </div>
 </template>
 
@@ -15,8 +22,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" >
+    img {
+        width: 200px;
 
+    }
 </style>
 
 // {

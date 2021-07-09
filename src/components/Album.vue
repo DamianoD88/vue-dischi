@@ -1,8 +1,8 @@
 <template>
   <section>
       <div class="row" v-if="!loading">
-          <div v-for="(music, index) in Album" :key="index" class="col-6 col-md-4 col-lg-5">
-              {{ music.title  }}
+          <div v-for="(music, index) in Album" :key="index" class="col-6 col-md-4 col-lg-1 text-center">
+              
               <music :details="music" />
               <!-- <music :details="music" /> -->
           </div>
