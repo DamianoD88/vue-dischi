@@ -1,14 +1,14 @@
 <template>
   <div class="card-group g-4 p-2">
 
-      <div class="card">
+      <div class="card bg-dark">
           <img class="card-img-top p-2" :src="details.poster" :alt="details.title">
-      <h5 class="card-title text-center">
+      <h5 class="card-title text-center  text-white">
           {{ details.title }}
       </h5>
       
-      <div class="card-text text-center">{{ details.author }}
-          <div class="card-text text-center"> {{ details.year }}</div>
+      <div class="card-text text-center text-secondary">{{ details.author }}
+          <div class="card-text text-center text-secondary"> {{ details.year }}</div>
       </div>
       </div>
 
@@ -27,6 +27,8 @@ export default {
         width: 200px;
 
     }
+
+    
 </style>
 
 // {

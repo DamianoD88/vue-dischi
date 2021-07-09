@@ -22,5 +22,7 @@ export default {
 
 <style lang="scss">
 @import '@/style/general.scss';
-
+#app{
+  background-color: #1e2d3b;
+}
 </style>
