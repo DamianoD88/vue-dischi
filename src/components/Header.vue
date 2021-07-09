@@ -1,7 +1,7 @@
 <template>
   <header>
       <!-- <h1>{{ message }}</h1> -->
-      <img class="logo rounded-circle" src="../../img/download.png" alt="">
+      <img class="logo rounded-circle" src="../../img/logo.png" alt="">
   </header>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 header {
     width: 100%;

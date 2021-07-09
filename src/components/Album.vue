@@ -1,25 +1,35 @@
 <template>
   <section>
-      <div class="row">
+      <div class="row" v-if="!loading">
           <div v-for="music in album" :key="music.title" class="col-6 col-md-4 col-lg-3">
-              {{ music.author }}
+              <music :details="music" />
           </div>
       </div>
+      <!-- <Loader v-else ladel="Vue-dischi" /> -->
+      <!-- <Song /> -->
   </section>
 </template>
 
 <script>
 import axios from 'axios';
+// import Loader from '@/components/Loader.vue';
+// import Song from '@/components/Song.vue';
+
 
 export default {
     name: 'Album',
+    components: {
+        // Song,
+        // Loader
+    },
     data() {
         return {
             apiURL : 'https://flynn.boolean.careers/exercises/api/array/music',
-            album : ''
+            album : '',
+            loading: true
         }
     },
-    axios(){
+    created(){
         this.getAlbum();
     },
     methods: {
@@ -30,6 +40,7 @@ export default {
                     console.log(response.data);
                     this.Album = response.data;
                     console.log(this.Album);
+                    this.loading = false;
                 })
                 .catch(error => {
                     console.log('Errore: ', error);
@@ -39,6 +50,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>
