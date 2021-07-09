@@ -1,5 +1,5 @@
 <template>
-  <div class="card-group g-4 ">
+  <div class="card-group g-4 p-2">
 
       <div class="card">
           <img class="card-img-top p-2" :src="details.poster" :alt="details.title">

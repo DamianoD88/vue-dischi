@@ -1,7 +1,7 @@
 <template>
-  <section>
-      <div class="row" v-if="!loading">
-          <div v-for="(music, index) in Album" :key="index" class="col-6 col-md-4 col-lg-1 text-center">
+  <section class="container">
+      <div class="row d-flex justify-content-around p-5" v-if="!loading">
+          <div v-for="(music, index) in Album" :key="index" class="col-6 col-md-4 col-lg-2 text-center">
               
               <music :details="music" />
               <!-- <music :details="music" /> -->
