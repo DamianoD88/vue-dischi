@@ -2,7 +2,7 @@
   <section>
       <div class="row" v-if="!loading">
           <div v-for="(music, index) in album" :key="index" class="col-6 col-md-4 col-lg-3">
-              {{ index.title  }}
+              {{ music.title  }}
               <!-- <music :details="music" /> -->
           </div>
       </div>
